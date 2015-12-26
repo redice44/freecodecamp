@@ -1,0 +1,23 @@
+{
+  "name": "boilerplate-node-express",
+  "version": "1.0.0",
+  "description": "Boilerplate for an Express Server.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app/app.js"
+  },
+  "author": "Matthew Thomson<red.cataclysm@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-sass": "^2.1.0",
+    "jshint": "^2.8.0"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "jade": "^1.11.0"
+  }
+}
