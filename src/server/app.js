@@ -4,7 +4,7 @@ var config = require('./config/');
 var routes = require('./routes/');
 
 // Configure Application
-config(app);
+config(app, express);
 
 // Register Routes
 routes(app);

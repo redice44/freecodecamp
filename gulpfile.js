@@ -36,7 +36,7 @@ gulp.task('build:js-all', ['jshint-all', 'jscs-all'], function() {
   gulp.src('./src/server/**/*.js')
     .pipe(gulp.dest('./app/'));
 
-  gulp.src('./src/client/**/*.js')
+  gulp.src('./src/javascript/**/*.js')
     // Concat and Minify
     .pipe(gulp.dest('./app/public/javascript'));
 });
