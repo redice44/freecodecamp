@@ -23,9 +23,8 @@
   }
 
   function updateTimer() {
-    console.log('Updating Timer');
     var text = '';
-    text += parseInt(currentTime / SECONDS)
+    text += parseInt(currentTime / SECONDS);
     text += ':';
     text += currentTime % SECONDS < 10 ? '0' : '';
     text += currentTime % SECONDS;
@@ -59,20 +58,31 @@
   }
 
   function startTimer() {
+    console.log('Starting Timer');
     intervalId = setInterval(timer, 1000);
     $('#timer').off();
     $('#timer').on('click', pauseTimer);
   }
 
   function timer() {
-    currentTime--;
+    if (currentTime >= 1) {
+      currentTime--;
+    } else {
+      pauseTimer();
+    }
     updateTimer();
   }
 
   function pauseTimer() {
+    console.log('Pausing Timer');
     clearInterval(intervalId);
     $('#timer').off();
     $('#timer').on('click', startTimer);
+  }
+
+  function testTimer() {
+    console.log('Setting timer to 3 seconds.');
+    currentTime = 3;
   }
 
   $(document).ready(function() {
@@ -83,5 +93,7 @@
     $('#session .controls .less').on('click', decrimentSession);
     $('#session .controls .more').on('click', incrimentSession);
     $('#timer').on('click', startTimer);
+
+    $('#test-timer').on('click', testTimer);
   });
 })();
