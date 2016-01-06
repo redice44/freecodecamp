@@ -7,4 +7,5 @@ module.exports = function(app) {
 
   app.get('/', contentHandler.landingPage);
   app.get('/tomato-clock', ziplineHandler.tomatoClock);
+  app.get('/quotes', ziplineHandler.randomQuote);
 };
