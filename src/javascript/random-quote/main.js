@@ -2,39 +2,31 @@
   var data = {
     quotes: [
       {
-        text: 'This is a quote 1',
-        author: 'Matt',
-        twitter: '@redice44'
+        text: "Success is a project that's always under construction.",
+        author: 'Pat Summitt'
       }, {
-        text: 'This is a quote 2',
-        author: 'Matt',
-        twitter: '@redice44'
+        text: "I don't mind getting beaten, but I hate to lose.",
+        author: 'Reggie Jackson'
       }, {
-        text: 'This is a quote 3',
-        author: 'Matt',
-        twitter: '@redice44'
+        text: 'You should never be proud of doing the right thing. You should just do it.',
+        author: 'Dean Smith'
       }, {
-        text: 'This is a quote 4',
-        author: 'Matt',
-        twitter: '@redice44'
+        text: 'Some lessons need to be experienced to be understood.',
+        author: 'Ronda Rousey'
       }, {
-        text: 'This is a quote 5',
-        author: 'Matt',
-        twitter: '@redice44'
+        text: "Being nervous isn't a bad thing. It means something important is happening.",
+        author: 'Michael Jordon'
       }, {
-        text: 'This is a quote 6',
-        author: 'Matt',
-        twitter: '@redice44'
+        text: 'Success is performing to the limit of your potential',
+        author: 'Bob Knight'
       }, {
-        text: 'This is a quote 7',
-        author: 'Matt',
-        twitter: '@redice44'
+        text: 'Adapt what is useful, reject what is useless, and add what is specifically your own',
+        author: 'Bruce Lee'
       }
     ]
   };
 
   var tweetWebIntent = 'https://twitter.com/intent/tweet?text=';
-  var tweetVia = '&via=redice44';
 
   function pickQuote() {
     var newQuoteIndex = Math.floor(Math.random() * data.quotes.length);
@@ -44,10 +36,12 @@
 
   function updateQuote(quote) {
     $('#quote').html(quote.text);
-    $('#tweet').attr('href', tweetWebIntent + quote.text + tweetVia);
+    $('#author').html('- ' + quote.author);
+    $('#tweet').attr('href', tweetWebIntent + quote.text + ' -' + quote.author);
   }
 
   $(document).ready(function() {
+    updateQuote(pickQuote());
     $('#new-quote').on('click', function(e) {
       updateQuote(pickQuote());
     });
