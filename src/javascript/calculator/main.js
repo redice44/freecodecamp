@@ -10,20 +10,20 @@
   function calculate() {
     switch (activeOp) {
       case '+':
-        console.log('Adding ' + total + ' + ' + parseInt(display));
-        total += parseInt(display);
+        console.log('Adding ' + total + ' + ' + parseFloat(display));
+        total += parseFloat(display);
         break;
       case '-':
-        console.log('Subtracting ' + total + ' - ' + parseInt(display));
-        total -= parseInt(display);
+        console.log('Subtracting ' + total + ' - ' + parseFloat(display));
+        total -= parseFloat(display);
         break;
       case '*':
-        console.log('Multiplying ' + total + ' * ' + parseInt(display));
-        total *= parseInt(display);
+        console.log('Multiplying ' + total + ' * ' + parseFloat(display));
+        total *= parseFloat(display);
         break;
       case '/':
-        console.log('Dividing ' + total + ' / ' + parseInt(display));
-        total /= parseInt(display);
+        console.log('Dividing ' + total + ' / ' + parseFloat(display));
+        total /= parseFloat(display);
         break;
       default:
         console.log('Error: Unknown Operator.');
@@ -42,7 +42,7 @@
       calculate();
     }
     if (total === null) {
-      total = parseInt(display);
+      total = parseFloat(display);
     }
     display = "";
     activeOp = op;
@@ -62,6 +62,7 @@
       case 8:
       case 9:
       case 0:
+      case '.':
         operand(key);
         break;
       case '+':
@@ -110,7 +111,8 @@
       'Multi',
       'Div',
       'AC',
-      'CE'
+      'CE',
+      'Dec'
     ];
     keys.forEach(function(val) {
       $('#key' + val).on('click', press);
