@@ -1,10 +1,10 @@
 {
-  "name": "boilerplate-node-express",
+  "name": "freecodecamp-project",
   "version": "1.0.0",
-  "description": "Boilerplate for an Express Server.",
+  "description": "Collection of FreeCodeCamp Projects",
   "main": "app.js",
   "scripts": {
-    "start": "node app/app.js"
+    "start": "node build/app.js"
   },
   "author": "Matthew Thomson<red.cataclysm@gmail.com>",
   "license": "MIT",
