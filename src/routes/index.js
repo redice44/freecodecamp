@@ -1,9 +1,9 @@
-var ContentHandler = require('./contentHandler.js');
-var ZiplineHandler = require('./ziplineHandler.js');
+let ContentHandler = require('./contentHandler.js');
+let ZiplineHandler = require('./ziplineHandler.js');
 
-module.exports = function(app) {
-  var contentHandler = new ContentHandler();
-  var ziplineHandler = new ZiplineHandler();
+module.exports = (app) => {
+  let contentHandler = new ContentHandler();
+  let ziplineHandler = new ZiplineHandler();
 
   app.get('/', contentHandler.landingPage);
   app.get('/tomato-clock', ziplineHandler.tomatoClock);

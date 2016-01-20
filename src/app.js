@@ -1,7 +1,7 @@
-var express = require('express');
-var app = express();
-var config = require('./config/');
-var routes = require('./routes/');
+let express = require('express');
+let app = express();
+let config = require('./config/');
+let routes = require('./routes/');
 
 // Configure Application
 config(app, express);
@@ -9,6 +9,6 @@ config(app, express);
 // Register Routes
 routes(app);
 
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), () => {
   console.log('Express Server listening on port: ' + app.get('port'));
 });

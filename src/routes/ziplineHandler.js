@@ -1,15 +1,9 @@
 function ziplineHandler() {
-  this.tomatoClock = function(req, res, next) {
-    return res.render('tomato-clock');
-  };
+  this.tomatoClock = (req, res) => res.render('tomato-clock');
 
-  this.randomQuote = function(req, res, next) {
-    return res.render('random-quote');
-  };
+  this.randomQuote = (req, res) => res.render('random-quote');
 
-  this.calculator = function(req, res, next) {
-    return res.render('calculator');
-  };
+  this.calculator = (req, res) => res.render('calculator');
 }
 
 module.exports = ziplineHandler;
