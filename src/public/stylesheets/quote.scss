@@ -1,0 +1,61 @@
+$primaryColor: #2A94B8;
+$accentColor: #952AB8;
+
+#container {
+
+}
+
+#container-old {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  display: none;
+  /*display: flex;*/
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $primaryColor;
+  font-family: sans-serif;
+
+  & > div {
+    width: 60vw;
+  }
+  #bubble {
+    border-radius: 30vw;
+
+    background-color: white;
+
+    #quote {
+      padding: 50px 100px;
+    }
+
+    #author {
+      padding: 0 100px 50px 100px;
+
+      text-align: right;
+    }
+  }
+
+  #actions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & > div {
+      width: 100px;
+      height: 200px;
+      margin: 0 100px;
+      border-radius: 50px;
+      border: 5px solid $accentColor;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: white;
+    }
+  }
+}

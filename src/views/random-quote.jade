@@ -2,12 +2,19 @@ doctype html
 html
   head
     title Random Quote Machine
-    link(rel='stylesheet', href='./stylesheets/reset.css')
-    link(rel='stylesheet', href='./stylesheets/random-quote/core.css')
+    link(rel='stylesheet', href='stylesheets/reset.css')
+    link(rel='stylesheet', href='stylesheets/core.css')
+    link(rel='stylesheet', href='stylesheets/quote.css')
     script(src='jquery/dist/jquery.js')
     script(src='javascript/random-quote/main.js')
   body
-    div#quote
-    div#author
-    button#new-quote New Quote
-    a#tweet(target='_blank') Tweet
+    div#container
+    div#container-old
+        div#bubble
+            div#quote
+            div#author
+        div#actions
+            div#new-quote 
+                p New Quote
+            div#tweet
+                a(target='_blank') Tweet

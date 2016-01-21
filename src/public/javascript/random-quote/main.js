@@ -1,5 +1,5 @@
 (function() {
-  var data = {
+  let data = {
     quotes: [
       {
         text: "Success is a project that's always under construction.",
@@ -26,18 +26,17 @@
     ]
   };
 
-  var tweetWebIntent = 'https://twitter.com/intent/tweet?text=';
+  let tweetWebIntent = 'https://twitter.com/intent/tweet?text=';
 
   function pickQuote() {
-    var newQuoteIndex = Math.floor(Math.random() * data.quotes.length);
-    console.log(newQuoteIndex);
+    let newQuoteIndex = Math.floor(Math.random() * data.quotes.length);
     return data.quotes[newQuoteIndex];
   }
 
   function updateQuote(quote) {
     $('#quote').html(quote.text);
     $('#author').html('- ' + quote.author);
-    $('#tweet').attr('href', tweetWebIntent + quote.text + ' -' + quote.author);
+    $('#tweet > a').attr('href', tweetWebIntent + quote.text + ' -' + quote.author);
   }
 
   $(document).ready(function() {
