@@ -28,25 +28,32 @@
 
   let tweetWebIntent = 'https://twitter.com/intent/tweet?text=';
 
-  function pickQuote() {
+  function getQuote() {
     let newQuoteIndex = Math.floor(Math.random() * data.quotes.length);
-    return data.quotes[newQuoteIndex];
+    return data.quotes[newQuoteIndex].text + ' -' + data.quotes[newQuoteIndex].author;
   }
 
-  function typeWriter(text, i) {
-    if (text.length >= i) {
+  function typeWriter(text, i, reverse = false, cb) {
+    if ((text.length >= i && !reverse) || (i >= 0 && reverse)) {
       setTimeout((pos) => {
         console.log(text.substr(0, pos));
         $('#quote').html(text.substr(0, pos) + '<span id="cursor"></span>');
-        typeWriter(text, pos + 1);
-      }, 50, i);
+        typeWriter(text, reverse ? pos - 1 : pos + 1, reverse, cb);
+      }, reverse ? 25 : 50, i);
+    } else if (typeof cb === 'function') {
+      cb();
     }
   }
 
   function updateQuote(quote) {
-    typeWriter(quote.text + ' -' + quote.author, 0);
-    $('#author').html('- ' + quote.author);
-    $('#tweet > a').attr('href', tweetWebIntent + quote.text + ' -' + quote.author);
+    let fullQuote = quote.text + ' -' + quote.author;
+    typeWriter(fullQuote, 0);
+    //$('#author').html('- ' + quote.author);
+    return fullQuote;
+  }
+
+  function updateTwitter(quote) {
+    $('#tweet > a').attr('href', tweetWebIntent + quote);
   }
 
   function cursorBlink() {
@@ -54,9 +61,16 @@
   }
 
   $(document).ready(function() {
-    updateQuote(pickQuote());
+    let currQuote = getQuote();
+    // Display initial quote
+    typeWriter(currQuote, 0);
     $('#new-quote').on('click', function(e) {
-      updateQuote(pickQuote());
+      // Delete current quote
+      typeWriter(currQuote, currQuote.length, true, () => {
+        currQuote = getQuote();
+        typeWriter(currQuote, 0);
+      });
+      //currQuote = updateQuote(pickQuote());
     });
 
     setInterval(cursorBlink, 500);
