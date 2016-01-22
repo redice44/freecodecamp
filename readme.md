@@ -1,5 +1,7 @@
 # Free Code Camp Ziplines
 
-### Front End Zipline: Pomodoro Clock
+### Front End Projects
 
-> /tomato-clock
+- (done) Random Quote Machine /quotes
+- (js mostly done) Calculator
+- (js mostly done) Tomato Clock
