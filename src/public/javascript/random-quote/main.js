@@ -17,10 +17,10 @@
         text: "Being nervous isn't a bad thing. It means something important is happening.",
         author: 'Michael Jordon'
       }, {
-        text: 'Success is performing to the limit of your potential',
+        text: 'Success is performing to the limit of your potential.',
         author: 'Bob Knight'
       }, {
-        text: 'Adapt what is useful, reject what is useless, and add what is specifically your own',
+        text: 'Adapt what is useful, reject what is useless, and add what is specifically your own.',
         author: 'Bruce Lee'
       }
     ]
@@ -33,10 +33,24 @@
     return data.quotes[newQuoteIndex];
   }
 
+  function typeWriter(text, i) {
+    if (text.length >= i) {
+      setTimeout((pos) => {
+        console.log(text.substr(0, pos));
+        $('#quote').html(text.substr(0, pos) + '<span id="cursor"></span>');
+        typeWriter(text, pos + 1);
+      }, 50, i);
+    }
+  }
+
   function updateQuote(quote) {
-    $('#quote').html(quote.text);
+    typeWriter(quote.text + ' -' + quote.author, 0);
     $('#author').html('- ' + quote.author);
     $('#tweet > a').attr('href', tweetWebIntent + quote.text + ' -' + quote.author);
+  }
+
+  function cursorBlink() {
+    $('#cursor').toggleClass('blink');
   }
 
   $(document).ready(function() {
@@ -44,5 +58,7 @@
     $('#new-quote').on('click', function(e) {
       updateQuote(pickQuote());
     });
+
+    setInterval(cursorBlink, 500);
   });
 })();

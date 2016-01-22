@@ -1,61 +1,42 @@
-$primaryColor: #2A94B8;
-$accentColor: #952AB8;
+#terminal {
+  height: 100vh;
+  width: 100vw;
+  padding: 400px;
+  box-sizing: border-box;
 
-#container {
+  background-color: black;
+  #quote {
+    display: inline-block;
 
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #00FF00;
+  }
+
+  #cursor {
+    height: 20px;
+    width: 3px;
+    margin-left: 5px;
+    display: inline-block;
+
+    background-color: #00FF00;
+
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 0.5s;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+
+    &.blink {
+      background-color: rgba(0, 255, 0, 0);
+      webkit-transition-property: background-color;
+      -webkit-transition-duration: 0.5s;
+      transition-property: background-color;
+      transition-duration: 0.5s;
+    }
+  }
 }
 
 #container-old {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  box-sizing: border-box;
   display: none;
-  /*display: flex;*/
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background-color: $primaryColor;
-  font-family: sans-serif;
-
-  & > div {
-    width: 60vw;
-  }
-  #bubble {
-    border-radius: 30vw;
-
-    background-color: white;
-
-    #quote {
-      padding: 50px 100px;
-    }
-
-    #author {
-      padding: 0 100px 50px 100px;
-
-      text-align: right;
-    }
-  }
-
-  #actions {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    & > div {
-      width: 100px;
-      height: 200px;
-      margin: 0 100px;
-      border-radius: 50px;
-      border: 5px solid $accentColor;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      background-color: white;
-    }
-  }
 }
+
