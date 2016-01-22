@@ -28,12 +28,16 @@
 
   let tweetWebIntent = 'https://twitter.com/intent/tweet?text=';
 
-  function getQuote() {
-    let newQuoteIndex = Math.floor(Math.random() * data.quotes.length);
+  function getQuote(oldQuote = "") {
+    let newQuoteIndex;
+    do {
+      newQuoteIndex = Math.floor(Math.random() * data.quotes.length);
+    } while (oldQuote === data.quotes[newQuoteIndex].text + ' -' + data.quotes[newQuoteIndex].author);
+    
     return data.quotes[newQuoteIndex].text + ' -' + data.quotes[newQuoteIndex].author;
   }
 
-  function typeWriter(text, i, reverse = false, cb) {
+  function typeWriter(text, i, reverse = false, cb = null) {
     if ((text.length >= i && !reverse) || (i >= 0 && reverse)) {
       setTimeout((pos) => {
         console.log(text.substr(0, pos));
@@ -67,7 +71,7 @@
     $('#new-quote').on('click', function(e) {
       // Delete current quote
       typeWriter(currQuote, currQuote.length, true, () => {
-        currQuote = getQuote();
+        currQuote = getQuote(currQuote);
         typeWriter(currQuote, 0);
       });
       //currQuote = updateQuote(pickQuote());
