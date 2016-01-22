@@ -22,6 +22,9 @@
       }, {
         text: 'Adapt what is useful, reject what is useless, and add what is specifically your own.',
         author: 'Bruce Lee'
+      }, {
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        author: 'Any Web Developer Ever'
       }
     ]
   };
@@ -49,13 +52,6 @@
     }
   }
 
-  function updateQuote(quote) {
-    let fullQuote = quote.text + ' -' + quote.author;
-    typeWriter(fullQuote, 0);
-    //$('#author').html('- ' + quote.author);
-    return fullQuote;
-  }
-
   function updateTwitter(quote) {
     $('#tweet > a').attr('href', tweetWebIntent + quote);
   }
@@ -68,13 +64,15 @@
     let currQuote = getQuote();
     // Display initial quote
     typeWriter(currQuote, 0);
+    updateTwitter(currQuote);
+
     $('#new-quote').on('click', function(e) {
       // Delete current quote
       typeWriter(currQuote, currQuote.length, true, () => {
         currQuote = getQuote(currQuote);
+        updateTwitter(currQuote);
         typeWriter(currQuote, 0);
       });
-      //currQuote = updateQuote(pickQuote());
     });
 
     setInterval(cursorBlink, 500);
