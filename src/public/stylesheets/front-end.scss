@@ -1,0 +1,16 @@
+@import "colors";
+
+#front-end {
+
+  & > article {
+    height: 100vh;
+  }
+
+  & > article:nth-child(even) {
+    background-color: $gold;
+  }
+
+  & > article:nth-child(odd) {
+    background-color: $black;
+  }
+}

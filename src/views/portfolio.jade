@@ -1,0 +1,24 @@
+extends ./base_template
+
+block heading
+  link(rel='stylesheet', href='./stylesheets/main.css')
+  link(rel='stylesheet', href='./stylesheets/front-end.css')
+  link(rel='stylesheet', href='./stylesheets/quote.css')
+  script(src='jquery/dist/jquery.js')
+  script(src='javascript/quote.js')
+
+block content
+  #portfolio
+    //- Front end, Back end, react, d3, etc
+    nav
+    section#front-end
+      header
+        //- articles
+        nav
+          ul
+            li
+              a(href='#quotes') Quotes
+      article#hello
+      include ./quote.jade
+      article#calculator
+      article#clock

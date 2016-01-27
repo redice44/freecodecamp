@@ -1,18 +1,14 @@
-$textColor: #00FF00;
+@import "colors";
 
-#terminal {
-  height: 100vh;
-  width: 100vw;
+#quotes {
   padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
 
-  background-color: black;
-  font-family: sans-serif;
   font-size: 20px;
-  color: $textColor;
+  color: $gold;
 
   & > div {
     width: 50vw;
@@ -26,7 +22,7 @@ $textColor: #00FF00;
 
   #actions {
     margin-bottom: 10px;
-    border-bottom: 1px solid $textColor;
+    border-bottom: 1px solid $gold;
     display: flex;
     justify-content: space-between;
 
@@ -37,7 +33,7 @@ $textColor: #00FF00;
       box-sizing: border-box;
 
       &:hover {
-        border-bottom: 5px solid $textColor;
+        border-bottom: 5px solid $gold;
       }
     }
 
@@ -48,11 +44,11 @@ $textColor: #00FF00;
       box-sizing: border-box;
 
       &:hover {
-        border-bottom: 5px solid $textColor;
+        border-bottom: 5px solid $gold;
       }
 
       & > a {
-        color: $textColor;
+        color: $gold;
         text-decoration: none;
       }
     }
@@ -64,7 +60,7 @@ $textColor: #00FF00;
     margin-left: 5px;
     display: inline-block;
 
-    background-color: $textColor;
+    background-color: $gold;
 
     -webkit-transition-property: background-color;
     -webkit-transition-duration: 0.5s;
