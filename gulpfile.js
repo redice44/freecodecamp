@@ -14,6 +14,8 @@ gulp.task('watch', () => {
   gulp.watch('./src/**/*.jade', ['build:html']);
 });
 
+gulp.task('build:app', ['build:js', 'build:css', 'build:html']);
+
 gulp.task('build:js', () => {
   gulp.src('./src/**/*.js')
     .pipe(babel({ presets: ['es2015']}))
