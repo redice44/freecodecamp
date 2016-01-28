@@ -43,7 +43,7 @@
   function typeWriter(text, i, reverse = false, cb = null) {
     if ((text.length >= i && !reverse) || (i >= 0 && reverse)) {
       setTimeout((pos) => {
-        console.log(text.substr(0, pos));
+        //console.log(text.substr(0, pos));
         $('#quote').html(text.substr(0, pos) + '<span id="cursor"></span>');
         typeWriter(text, reverse ? pos - 1 : pos + 1, reverse, cb);
       }, reverse ? 25 : 50, i);
