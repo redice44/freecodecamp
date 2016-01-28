@@ -4,13 +4,49 @@
 
   & > article {
     height: 100vh;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    & a {
+      text-decoration: none;
+    }
+
+    & > .corner {
+      width: 200px;
+      border: 50px solid transparent;
+      z-index: 2;
+    }
   }
 
   & > article:nth-child(even) {
+    border-color: $black;
     background-color: $gold;
+    color: $black;
+
+    & a {
+      color: $black;
+    }
+
+    & > .corner {
+      border-top: 50px solid;
+      border-right: 50px solid;
+    }
   }
 
   & > article:nth-child(odd) {
+    border-color: $gold;
     background-color: $black;
+    color: $gold;
+
+    & a {
+      color: $gold;
+    }
+    
+    & > .corner {
+      border-top: 50px solid $gold;
+      border-right: 50px solid $gold;
+    }
   }
 }

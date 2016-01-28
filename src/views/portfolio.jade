@@ -9,16 +9,17 @@ block heading
 
 block content
   #portfolio
+    a(name='home')
     //- Front end, Back end, react, d3, etc
     nav
     section#front-end
-      header
-        //- articles
-        nav
-          ul
-            li
-              a(href='#quotes') Quotes
-      article#hello
-      include ./quote.jade
+      article
+      article
+      article
+        a(name='quotes')
+        include ./quote.jade
+        .corner
       article#calculator
+        .corner
       article#clock
+        .corner
