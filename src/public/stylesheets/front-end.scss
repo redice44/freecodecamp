@@ -3,7 +3,7 @@
 #front-end {
 
   & > article {
-    height: 100vh;
+    min-height: 100vh;
 
     display: flex;
     justify-content: flex-start;
@@ -11,6 +11,11 @@
 
     & a {
       text-decoration: none;
+    }
+
+    & > div:first-of-type {
+      flex-grow: 1;
+      padding-top: 50px;
     }
 
     & > .corner {
@@ -21,12 +26,15 @@
   }
 
   & > article:nth-child(even) {
-    border-color: $black;
-    background-color: $gold;
-    color: $black;
+    $primaryColor: $gold;
+    $bgColor: $black;
+
+    border-color: $bgColor;
+    background-color: $primaryColor;
+    color: $bgColor;
 
     & a {
-      color: $black;
+      color: $bgColor;
     }
 
     & > .corner {
@@ -36,14 +44,17 @@
   }
 
   & > article:nth-child(odd) {
-    border-color: $gold;
-    background-color: $black;
-    color: $gold;
+    $primaryColor: $black;
+    $bgColor: $gold;
+
+    border-color: $bgColor;
+    background-color: $primaryColor;
+    color: $bgColor;
 
     & a {
-      color: $gold;
+      color: $bgColor;
     }
-    
+
     & > .corner {
       border-top: 50px solid $gold;
       border-right: 50px solid $gold;

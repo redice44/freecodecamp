@@ -1,29 +1,27 @@
-doctype html
-html
-  head
-    title Calculator
-    link(rel='stylesheet', href='./stylesheets/reset.css')
-    link(rel='stylesheet', href='./stylesheets/calculator/core.css')
-    script(src='jquery/dist/jquery.js')
-    script(src='javascript/calculator/main.js')
-  body
-    div#calculator
-      div#display
-      div.keys#key1(data-key='1') 1
-      div.keys#key2(data-key='2') 2
-      div.keys#key3(data-key='3') 3
-      div.keys#key4(data-key='4') 4
-      div.keys#key5(data-key='5') 5
-      div.keys#key6(data-key='6') 6
-      div.keys#key7(data-key='7') 7
-      div.keys#key8(data-key='8') 8
-      div.keys#key9(data-key='9') 9
-      div.keys#key0(data-key='0') 0
-      div.keys#keyEq(data-key='=') =
-      div.keys#keyAdd(data-key='+') +
-      div.keys#keySub(data-key='-') -
-      div.keys#keyMulti(data-key='*') *
-      div.keys#keyDiv(data-key='/') /
-      div.keys#keyCE(data-key='CE') CE
-      div.keys#keyAC(data-key='AC') AC
-      div.keys#keyDec(data-key='.') .
+#calculator-container
+  #calculator
+    #panel 
+      p 123.2
+    #buttons
+      .row.right
+        .button C
+      .row
+        .button 7
+        .button 8
+        .button 9
+        .button /
+      .row
+        .button 4
+        .button 5
+        .button 6
+        .button *
+      .row
+        .button 1
+        .button 2
+        .button 3
+        .button -
+      .row
+        .button 0
+        .button .
+        .button =
+        .button +

@@ -1,0 +1,68 @@
+@import "colors";
+$lightGrey: #F0F0F0;
+
+#calculator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #calculator {
+    width: 250px;
+    height: 350px;
+    border: 5px solid;
+    border-radius: 25px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #panel {
+      width: 100%;
+      height: 50px;
+      box-sizing: border-box;
+      border-radius: 5px;
+
+      background-color: $gold;
+      color: $black;
+
+      & > p {
+        padding-right: 5px;
+
+        text-align: right;
+        font-size: 20px;
+        line-height: 50px;
+      }
+    }
+
+    #buttons {
+      margin-top: 20px;
+
+      display: flex;
+      flex-direction: column;
+
+      .row {
+        display: flex;
+
+        &.right {
+          flex-direction: row-reverse;
+        }
+
+        .button {
+          width: 50px;
+          height: 40px;
+          margin: 5px;
+          border: 3px solid;
+          border-radius: 10px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          font-size: 20px;
+          line-height: 1;
+        }
+      }
+    }
+  }
+}
