@@ -14,6 +14,15 @@
   }
 
   function operation(button) {
+    // Do no operation if no operand
+    // Update operater if not =
+    if (display === '') {
+      if (operator !== '=') {
+        operator = button;
+      }
+      return;
+    }
+
     let value = parseFloat(display);
 
     switch (operator) {
