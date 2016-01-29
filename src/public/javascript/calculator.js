@@ -3,6 +3,12 @@
   let display = '';
   let operator = '+';
 
+  function reset() {
+    total = 0;
+    display = '';
+    operator = '+'; // Inputting the 1st number is adding it to 0
+  }
+
   function updateDisplay() {
     $('#panel p').html(display);
   }
@@ -33,16 +39,14 @@
     }
 
     display = total.toString();
+    updateDisplay();
 
     if (button === '=') {
-      operator = '+';
-      total = 0;
+      reset();
     } else {
       operator = button;
+      display = '';
     }
-
-    updateDisplay();
-    display = '';
   }
 
   function number(button) {
@@ -56,6 +60,8 @@
 
     switch(button) {
       case 'C':
+        reset();
+        updateDisplay();
         break;
       case '=':
       case '/':
