@@ -51,14 +51,18 @@
 
   function number(button) {
     // Handle limiting the size. Maybe.
-    display += button;
+
+    // do nothing if attempting to add more than 1 decimal point
+    if (!(button === '.' && display.search(/\./) !== -1)) {
+      display += button;
+    }
     updateDisplay();
   }
 
   function determineButton(e) {
     let button = $(e.currentTarget).html();
 
-    switch(button) {
+    switch (button) {
       case 'C':
         reset();
         updateDisplay();
