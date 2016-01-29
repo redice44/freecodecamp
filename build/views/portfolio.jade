@@ -1,0 +1,42 @@
+extends ./base_template
+
+block heading
+  link(rel='stylesheet', href='./stylesheets/main.css')
+  link(rel='stylesheet', href='./stylesheets/front-end.css')
+  link(rel='stylesheet', href='./stylesheets/quote.css')
+  link(rel='stylesheet', href='./stylesheets/calculator.css')
+  script(src='jquery/dist/jquery.js')
+  script(src='javascript/quote.js')
+  script(src='javascript/calculator.js')
+
+block content
+  #portfolio
+    //- Front end, Back end, react, d3, etc
+    nav
+    section#front-end
+      article#home
+        header
+          img
+        ul
+          li 
+            a(href='#quotes') Random Quotes
+          li 
+            a(href='#calculator') Calculator
+          li 
+            a(href='#clock') Pomodoro Clock
+        ul
+          li Local Weather
+          li Camper News
+          li Wiki Viewer
+          li Twitch 
+          li Tic Tac Toe
+          li Simon Says
+      article
+        include ./quote.jade
+        .corner
+      article
+        include ./calculator.jade
+        .corner
+      article
+        //- include ./clock.jade
+        .corner

@@ -1,0 +1,46 @@
+#quotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 20px; }
+  #quotes > div {
+    width: 50vw; }
+  @media (max-width: 600px) {
+    #quotes > div {
+      width: 95vw; } }
+  #quotes #actions {
+    margin-bottom: 10px;
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: space-between; }
+    #quotes #actions #new-quote {
+      cursor: pointer;
+      border-bottom: 5px solid transparent;
+      padding-left: 5px;
+      box-sizing: border-box; }
+      #quotes #actions #new-quote:hover {
+        border-bottom: 5px solid; }
+    #quotes #actions #tweet {
+      cursor: pointer;
+      border-bottom: 5px solid transparent;
+      padding-right: 5px;
+      box-sizing: border-box; }
+      #quotes #actions #tweet:hover {
+        border-bottom: 5px solid; }
+  #quotes #cursor {
+    height: 20px;
+    width: 0;
+    margin-left: 5px;
+    border-left: 3px solid;
+    display: inline-block;
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 0.5s;
+    transition-property: background-color;
+    transition-duration: 0.5s; }
+    #quotes #cursor.blink {
+      background-color: rgba(0, 255, 0, 0);
+      webkit-transition-property: background-color;
+      -webkit-transition-duration: 0.5s;
+      transition-property: background-color;
+      transition-duration: 0.5s; }
