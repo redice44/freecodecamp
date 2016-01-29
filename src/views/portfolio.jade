@@ -11,19 +11,32 @@ block heading
 
 block content
   #portfolio
-    a(name='home')
     //- Front end, Back end, react, d3, etc
     nav
     section#front-end
+      article#home
+        header
+          img
+        ul
+          li 
+            a(href='#quotes') Random Quotes
+          li 
+            a(href='#calculator') Calculator
+          li 
+            a(href='#clock') Pomodoro Clock
+        ul
+          li Local Weather
+          li Camper News
+          li Wiki Viewer
+          li Twitch 
+          li Tic Tac Toe
+          li Simon Says
       article
-        #home
-      article
-        a(name='quotes')
         include ./quote.jade
         .corner
       article
-        a(name='calculator')
         include ./calculator.jade
         .corner
-      article#clock
+      article
+        //- include ./clock.jade
         .corner

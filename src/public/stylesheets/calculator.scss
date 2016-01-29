@@ -1,12 +1,12 @@
 @import "colors";
 $lightGrey: #F0F0F0;
 
-#calculator-container {
+#calculator {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  #calculator {
+  #calculator-body {
     width: 250px;
     height: 350px;
     border: 5px solid;

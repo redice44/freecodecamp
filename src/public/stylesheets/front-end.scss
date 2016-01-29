@@ -60,4 +60,43 @@
       border-right: 50px solid $gold;
     }
   }
+
+  #home {
+    display: block;
+    padding: 50px;
+    
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding-bottom: 50px;
+
+      & > img {
+        width: 600px;
+        height: 300px;
+      }
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+
+      li {
+        margin: 25px;
+        border-bottom: 2px solid;
+        padding-bottom: 5px;
+
+        a {
+          border-bottom: 5px solid transparent;
+          padding: 10px 10px 5px 10px;
+
+          &:hover {
+            border-bottom: 5px solid;
+          }
+        }
+      }
+    }
+  }
 }
